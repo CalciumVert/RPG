@@ -55,6 +55,9 @@ public class Game extends Application {
 
 
         Game myGame = new Game();
+        myGame.ennemies.add(new BasicEnnemy());
+        myGame.heroes.add(new Warrior("bite"));
+        myGame.heroes.add(new Mage("chibre"));
 
     // Demander le nombre de joueurs
         /*Scanner scanner = new Scanner(System.in);
