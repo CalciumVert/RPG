@@ -3,6 +3,8 @@ package com.rpg.rpg;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -47,6 +49,16 @@ public class Game extends Application {
         //Displaying the contents of the stage
         stage.show();
 
+        Image photoWarrior = new Image("file:assets/photoWarrior.png");
+        ImageView imWarrior = new ImageView();
+        imWarrior.setImage(photoWarrior);
+        imWarrior.setX(5);
+        imWarrior.setY(0);
+        imWarrior.setPreserveRatio(true);
+        imWarrior.setFitWidth(40);
+        root.getChildren().add(imWarrior);
+
+
 
 
     }
@@ -60,7 +72,7 @@ public class Game extends Application {
         myGame.heroes.add(new Mage("chibre"));
 
     // Demander le nombre de joueurs
-        /*Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Avec combien de héros voulez-vous jouer ? ");
 
         //Lit l'entier écrit par l'utilisateur et l'affecte à  la variable nombre du programme
@@ -96,18 +108,8 @@ public class Game extends Application {
 
         launch();
 
-*/
 
     }
 
 
 }
-
-
-
-
-
-
-
-
-
