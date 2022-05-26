@@ -7,4 +7,7 @@ public abstract class Ennemy {
 
         this.lifePoints = lifePoints;
     }
+    public int getLifePoints() {
+        return lifePoints;
+    }
 }

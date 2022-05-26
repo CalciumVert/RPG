@@ -24,12 +24,13 @@ public class Game extends Application {
         Rectangle rectangle = new Rectangle();
 
         //Setting the properties of the rectangle
-        rectangle.setX(150.0f);
-        rectangle.setY(75.0f);
-        rectangle.setWidth(300.0f);
-        rectangle.setHeight(150.0f);
+        rectangle.setX(300.0f);
+        rectangle.setY(150.0f);
+        rectangle.setWidth(1000.0f);
+        rectangle.setHeight(500.0f);
         rectangle.setStroke(Color.BLACK);
         rectangle.setFill(Color.WHITE);
+
 
        // AnchorPane root = new AnchorPane();
 
@@ -40,24 +41,30 @@ public class Game extends Application {
         //Creating a scene object
         Scene scene = new Scene(root, 600, 300);
 
-        //Setting title to the Stage
-        stage.setTitle("Drawing a Rectangle");
-
         //Adding scene to the stage
         stage.setScene(scene);
 
         //Displaying the contents of the stage
         stage.show();
 
-        Image photoWarrior = new Image("file:assets/photoWarrior.png");
-        ImageView imWarrior = new ImageView();
-        imWarrior.setImage(photoWarrior);
-        imWarrior.setX(5);
-        imWarrior.setY(0);
-        imWarrior.setPreserveRatio(true);
-        imWarrior.setFitWidth(40);
-        root.getChildren().add(imWarrior);
+        Rectangle sol = new Rectangle();
+        sol.setX(300.0f);
+        sol.setY(580.0f);
+        sol.setWidth(1000.0f);
+        sol.setHeight(70.0f);
+        sol.setFill(Color.GREEN);
+        root.getChildren().add(sol);
 
+
+        //sets Boss picture
+        Image photoBoss = new Image("file:assets/photoBoss.png");
+        ImageView imBoss = new ImageView();
+        imBoss.setImage(photoBoss);
+        imBoss.setX(1100);
+        imBoss.setY(440);
+        imBoss.setPreserveRatio(true);
+        imBoss.setFitWidth(100);
+        root.getChildren().add(imBoss);
 
 
 
@@ -67,9 +74,11 @@ public class Game extends Application {
 
 
         Game myGame = new Game();
+        myGame.ennemies.add(new Boss());
         myGame.ennemies.add(new BasicEnnemy());
-        myGame.heroes.add(new Warrior("bite"));
-        myGame.heroes.add(new Mage("chibre"));
+        myGame.heroes.add(new Warrior("jean"));
+        myGame.heroes.add(new Mage("calcelmo"));
+
 
     // Demander le nombre de joueurs
         Scanner scanner = new Scanner(System.in);
@@ -107,9 +116,5 @@ public class Game extends Application {
         System.out.println(myGame.heroes.toString());
 
         launch();
-
-
     }
-
-
 }
