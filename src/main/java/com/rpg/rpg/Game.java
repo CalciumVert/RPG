@@ -14,16 +14,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
+
 public class Game extends Application {
+    Rectangle rectangle = new Rectangle();
+    Group root = new Group(rectangle);
     List<Hero> heroes = new ArrayList<>();
     List<Ennemy> ennemies = new ArrayList<>();
     @Override
 
-    public void start(Stage stage) {
-        //Drawing a Rectangle
-        Rectangle rectangle = new Rectangle();
 
-        //Setting the properties of the rectangle
+    public void start(Stage stage) {
+
+
         rectangle.setX(300.0f);
         rectangle.setY(150.0f);
         rectangle.setWidth(1000.0f);
@@ -33,9 +36,6 @@ public class Game extends Application {
 
 
        // AnchorPane root = new AnchorPane();
-
-        //Creating a Group object
-        Group root = new Group(rectangle);
 
 
         //Creating a scene object
@@ -96,16 +96,20 @@ public class Game extends Application {
             Hero hero = null;
             if (typeJoueur.equals("Warrior")){
                  hero = new Warrior(nomJoueur);
+                 myGame.root.getChildren().add(hero);
 
             }
             else if (typeJoueur.equals("Mage")){
                  hero = new Mage(nomJoueur);
+                 myGame.root.getChildren().add(hero);
             }
             else if (typeJoueur.equals("Healer")){
                  hero = new Healer(nomJoueur);
+                 myGame.root.getChildren().add(hero);
             }
             else if (typeJoueur.equals("Fighter")){
                  hero = new Fighter(nomJoueur);
+                 myGame.root.getChildren().add(hero);
             }
 
 
