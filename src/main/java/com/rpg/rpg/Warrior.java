@@ -16,7 +16,7 @@ public class Warrior extends Hero {
         this.power=powerWarrior;
         this.lifePoints=lifePointsWarrior;
         this.setImage(photoWarrior);
-        this.setX(350);
+        this.setX(900);
         this.setY(495);
         this.setPreserveRatio(true);
         this.setFitWidth(90);

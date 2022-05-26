@@ -66,21 +66,11 @@ public class Game extends Application {
         imBoss.setFitWidth(100);
         root.getChildren().add(imBoss);
 
-
+        creationPersonnage();
 
     }
-
-    public static void main(String[] args) {
-
-
-        Game myGame = new Game();
-        myGame.ennemies.add(new Boss());
-        myGame.ennemies.add(new BasicEnnemy());
-        myGame.heroes.add(new Warrior("jean"));
-        myGame.heroes.add(new Mage("calcelmo"));
-
-
-    // Demander le nombre de joueurs
+    public void creationPersonnage(){
+        // Demander le nombre de joueurs
         Scanner scanner = new Scanner(System.in);
         System.out.println("Avec combien de héros voulez-vous jouer ? ");
 
@@ -95,30 +85,28 @@ public class Game extends Application {
             String typeJoueur = scanner.next();
             Hero hero = null;
             if (typeJoueur.equals("Warrior")){
-                 hero = new Warrior(nomJoueur);
-                 myGame.root.getChildren().add(hero);
+                hero = new Warrior(nomJoueur);
+                this.root.getChildren().add(hero);
+
 
             }
             else if (typeJoueur.equals("Mage")){
-                 hero = new Mage(nomJoueur);
-                 myGame.root.getChildren().add(hero);
+                hero = new Mage(nomJoueur);
+                this.root.getChildren().add(hero);
             }
             else if (typeJoueur.equals("Healer")){
-                 hero = new Healer(nomJoueur);
-                 myGame.root.getChildren().add(hero);
+                hero = new Healer(nomJoueur);
+                this.root.getChildren().add(hero);
             }
             else if (typeJoueur.equals("Fighter")){
-                 hero = new Fighter(nomJoueur);
-                 myGame.root.getChildren().add(hero);
+                hero = new Fighter(nomJoueur);
+                this.root.getChildren().add(hero);
             }
-
-
-
-            myGame.heroes.add(hero);
-
+            this.heroes.add(hero);
         }
-        System.out.println(myGame.heroes.toString());
+    }
 
+    public static void main(String[] args) {
         launch();
     }
 }
