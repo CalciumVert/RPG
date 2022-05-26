@@ -22,7 +22,6 @@ public abstract class Hero extends ImageView {
     public int getPower() {
         return power;
     }
-
     public void attack(Ennemy ennemy){
         ennemy.setLifePoints(ennemy.getLifePoints() - this.power);
     }
