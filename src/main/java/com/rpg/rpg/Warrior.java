@@ -1,7 +1,9 @@
 package com.rpg.rpg;
 
+import javafx.scene.Group;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 public class Warrior extends Hero {
     private String name;
@@ -13,15 +15,15 @@ public class Warrior extends Hero {
         this.name=name;
         this.power=powerWarrior;
         this.lifePoints=lifePointsWarrior;
-
-        //Set picture and intial position
         this.setImage(photoWarrior);
         this.setX(350);
         this.setY(495);
         this.setPreserveRatio(true);
         this.setFitWidth(90);
+
     }
 
+    //sets Warrior picture
 
 
 

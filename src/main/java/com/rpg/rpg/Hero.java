@@ -2,7 +2,7 @@ package com.rpg.rpg;
 
 import javafx.scene.image.ImageView;
 
-public abstract class Hero extends ImageView {
+public abstract class  Hero extends ImageView {
     public int lifePoints = 100;
     public int power = 100;
 
@@ -22,8 +22,11 @@ public abstract class Hero extends ImageView {
     public int getPower() {
         return power;
     }
+
     public void attack(Ennemy ennemy){
         ennemy.setLifePoints(ennemy.getLifePoints() - this.power);
+
+
     }
 
 
