@@ -17,11 +17,15 @@ import java.util.Scanner;
 public class Game extends Application {
     List<Hero> heroes = new ArrayList<>();
     List<Ennemy> ennemies = new ArrayList<>();
+    //Drawing a Rectangle
+    Rectangle rectangle = new Rectangle();
+    //Creating a Group object
+    Group root = new Group(rectangle);
+
     @Override
 
     public void start(Stage stage) {
-        //Drawing a Rectangle
-        Rectangle rectangle = new Rectangle();
+
 
         //Setting the properties of the rectangle
         rectangle.setX(300.0f);
@@ -34,8 +38,7 @@ public class Game extends Application {
 
        // AnchorPane root = new AnchorPane();
 
-        //Creating a Group object
-        Group root = new Group(rectangle);
+
 
 
         //Creating a scene object
@@ -80,6 +83,8 @@ public class Game extends Application {
         myGame.heroes.add(new Mage("calcelmo"));
 
 
+
+
     // Demander le nombre de joueurs
         Scanner scanner = new Scanner(System.in);
         System.out.println("Avec combien de héros voulez-vous jouer ? ");
@@ -96,10 +101,13 @@ public class Game extends Application {
             Hero hero = null;
             if (typeJoueur.equals("Warrior")){
                  hero = new Warrior(nomJoueur);
+                 myGame.root.getChildren().add(hero);
+
 
             }
             else if (typeJoueur.equals("Mage")){
                  hero = new Mage(nomJoueur);
+
             }
             else if (typeJoueur.equals("Healer")){
                  hero = new Healer(nomJoueur);
