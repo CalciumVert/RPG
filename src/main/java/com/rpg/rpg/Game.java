@@ -86,23 +86,38 @@ public class Game extends Application {
             Hero hero = null;
             if (typeJoueur.equals("Warrior")){
                 hero = new Warrior(nomJoueur);
-                this.root.getChildren().add(hero);
-
-
             }
             else if (typeJoueur.equals("Mage")){
                 hero = new Mage(nomJoueur);
-                this.root.getChildren().add(hero);
             }
             else if (typeJoueur.equals("Healer")){
                 hero = new Healer(nomJoueur);
-                this.root.getChildren().add(hero);
+            }
+            else if (typeJoueur.equals("Hunter")){
+                hero = new Hunter(nomJoueur);
             }
             else if (typeJoueur.equals("Fighter")){
                 hero = new Fighter(nomJoueur);
-                this.root.getChildren().add(hero);
             }
             this.heroes.add(hero);
+            this.root.getChildren().add(hero);
+
+
+
+           /* // Combat
+            Boss bossFinal = new Boss();
+            while (bossFinal.isAlive()){
+                System.out.println("Pour attaquer tapez sur la touche'a'");
+                String quelleAttaque = scanner.next();
+                if (quelleAttaque.equals("a")){
+                    hero.attack(bossFinal);
+                }
+            }
+            if (bossFinal.isDead()){
+                System.out.println("Game Over");
+                break;
+            }*/
+
         }
     }
 

@@ -28,6 +28,14 @@ public abstract class  Hero extends ImageView {
 
 
     }
+   public boolean isAlive(){
+        if (lifePoints>0){
+            return true;
+        }
+        else {
+            return false;
+        }
+   }
 
 
 }
